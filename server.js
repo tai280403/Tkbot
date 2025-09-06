@@ -6,7 +6,12 @@ import cors from "cors";
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://frontend-chat-pi.vercel.app/", // domain frontend của bạn
+    "http://localhost:3000" // cho local dev
+  ]
+}));
 app.use(express.json());
 
 const API_KEY = process.env.GEMINI_API_KEY; // trong .env: GEMINI_API_KEY=AIzaSy...
