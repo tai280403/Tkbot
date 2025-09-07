@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 app.use(cors({
   origin: [
-    "https://frontend-chat-pi.vercel.app/", // domain frontend của bạn
+    "https://frontend-chat-pi.vercel.app", // domain frontend của bạn
     "http://localhost:3000" // cho local dev
   ]
 }));
