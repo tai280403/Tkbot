@@ -19,7 +19,7 @@ app.use(express.json());
 // Lấy API_KEY và MODEL từ biến môi trường
 const API_KEY = process.env.GEMINI_API_KEY;
 const MODEL = process.env.MODEL || "gemini-1.5-flash-latest"; // ✅ Dùng model mới nhất
-const BASE_URL = `https://generativelanguage.googleapis.com/v1/models/${MODEL}:generateContent`;
+const BASE_URL = `https://generativelanguage.googleapis.com/v1beta/models/${process.env.MODEL}:generateContent?key=${process.env.GEMINI_API_KEY}`;
 
 // Middleware log request
 app.use((req, res, next) => {
